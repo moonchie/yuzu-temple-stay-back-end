@@ -11,7 +11,7 @@ const cors         = require('cors');
 
 mongoose.Promise = Promise;
 mongoose
-  .connect('mongodb://localhost/yuzu-back-end', {useMongoClient: true})
+  .connect(process.env.MONGODB_URI, {useMongoClient: true})
   .then(() => {
     console.log('Connected to Mongo of Yuzu-back-end!')
   }).catch(err => {
@@ -34,13 +34,19 @@ app.use(express.static(path.join(__dirname, 'public')));
 // CORS setup
 app.use(cors({
   credentials: true,
-  origin: ['http//localhost:4200']
+  origin: ['http://localhost:4200']
 }))
 
 
 // backend API route
 const templeRouter = require('./routes/temple-router.js');
 app.use('/api', templeRouter);
+
+// afer your routers, SEND the Angular HTML (insteal of 404)
+app.use((req, res, next) => {
+  res.sendFile(`${__dirname}/public/index.html`)
+})
+
 
 
 module.exports = app;
