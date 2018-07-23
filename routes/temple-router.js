@@ -5,26 +5,56 @@ const Temple = require('../models/temple-model');
 
 
 
-router.get("/",(req, res, next) => {
-    Temple.findById("5b50afaff3749200c0583fba")
-    .then((temple) => {
+
+router.get("/", (req, res, next) => {
+    // August Suggestion temple
+    const { id } = "5b50afaff3749200c0583fba";
+
+    Temple.findOne(id)
+        .then((temple) => {
+            if (!temple) {
+                next();
+                return;
+            }
+            res.json(temple);
+        })
+        .catch((err) => {
+            next(err);
+        });
+});
+
+// Show all temples
+router.get("/temples",(req, res, next) => {
+    Temple
+    .find()
+    .sort({ createdAt: -1 })
+    .then((temples) => {
         res.json(temples);
     })
-    .catch((err) => {next(err)})
+    .catch((err) => {
+        next(err);
+    });
 })
 
-router.get("/temples",(req, res, next) => {
-    Temple.find()
-    //.sort()
-    .then(temples => {
-        if(err) {
-          res.json(err);
-          return;
-        }
-        res.send(temples);
-    })
-    .catch(err => next(err))
-})
+
+// Show one selected temple
+router.get("/temple/:id", (req, res, next) => {
+    // August Suggestion temple
+    const { id } = req.body;
+
+    Temple.findOne(id)
+        .then((temple) => {
+            if (!temple) {
+                next();
+                return;
+            }
+            res.json(temple);
+        })
+        .catch((err) => {
+            next(err);
+        });
+});
+
 
 
 module.exports = router;

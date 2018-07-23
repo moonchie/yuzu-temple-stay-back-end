@@ -34,12 +34,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 // CORS setup
 app.use(cors({
   credentials: true,
-  origion: ['http//localhost:4200']
+  origin: ['http//localhost:4200']
 }))
 
 
 // backend API route
-const templeRouter = require('./routes/temple-router');
+const templeRouter = require('./routes/temple-router.js');
 app.use('/api', templeRouter);
 
 
