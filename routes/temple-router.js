@@ -5,7 +5,6 @@ const Temple = require('../models/temple-model');
 
 
 
-
 router.get("/", (req, res, next) => {
     // August Suggestion temple
     const { id } = "5b50afaff3749200c0583fba";
