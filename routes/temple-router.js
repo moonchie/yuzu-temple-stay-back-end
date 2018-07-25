@@ -39,9 +39,10 @@ router.get("/temples",(req, res, next) => {
 // Show one selected temple
 router.get("/temple/:id", (req, res, next) => {
     // August Suggestion temple
-    const { id } = req.body;
+    const id = req.params.id;
+    // res.send(id);
 
-    Temple.findOne(id)
+    Temple.findById(id)                  // HERE CANNOT USE FINDBYID?
         .then((temple) => {
             if (!temple) {
                 next();
@@ -53,8 +54,6 @@ router.get("/temple/:id", (req, res, next) => {
             next(err);
         });
 });
-
-
 
 module.exports = router;
 
