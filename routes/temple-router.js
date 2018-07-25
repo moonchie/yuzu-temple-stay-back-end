@@ -2,12 +2,13 @@ const express = require("express");
 const router = express.Router();
 
 const Temple = require('../models/temple-model');
+const Booking = require('../models/booking-model')
 
 
 
 router.get("/", (req, res, next) => {
     // August Suggestion temple
-    const { id } = "5b50afaff3749200c0583fba";
+    const { id } = "5b585732f6f8181b045c84f2";
 
     Temple.findOne(id)
         .then((temple) => {
@@ -42,7 +43,7 @@ router.get("/temple/:id", (req, res, next) => {
     const id = req.params.id;
     // res.send(id);
 
-    Temple.findById(id)                  // HERE CANNOT USE FINDBYID?
+    Temple.findById(id)
         .then((temple) => {
             if (!temple) {
                 next();
@@ -54,6 +55,68 @@ router.get("/temple/:id", (req, res, next) => {
             next(err);
         });
 });
+
+
+// User booking history
+router.get("/history", (req, res, next) => {
+    // How to check if user logged in or not??
+
+    // Example User id
+    const { id } = "5b56f64a101e4b2bc0d1fb06";
+
+    Booking.findOne(id)
+        .then((booking) => {
+            if (!booking) {
+                next();
+                return;
+            }
+            res.json(booking);
+        })
+        .catch((err) => {
+            next(err);
+        });
+})
+
+// Page before confirmation page and POST to database
+router.get("/needconfirm", (req, res, next) => {
+    // 1. Pass in the data saved in session as an Object
+    // const booking = {userId, templeId, nights, dateArrival, price};
+
+    // 2. Show on front-end in the form
+
+    // Dummy data here, findByid({_id: userID})
+    const { userId } = "5b56f64a101e4b2bc0d1fb06";
+    Booking.findOne(userId)
+        .populate("templeID")                                                 // populate Temple data
+        .then((booking) => {
+            if (!booking) {
+                next();
+                return;
+            }
+            res.json(booking);
+        })
+        .catch((err) => {
+            next(err);
+        });
+
+})
+
+// POST save the booking to this user and then load Confirmation page
+// call the Booking Model
+router.post("/confirmed", (req, res, next) => {
+    // the data from the form
+    const { firstName, lastName, email, userID, templeID, nights, date, guests, cost } = req.body;
+
+    // Create this record in the database
+    Booking.create({firstName, lastName, email, userID, templeID, nights, date, guests, cost })
+        .then((newRecord) => {
+            // do nothing
+        })
+        .catch((err) => {
+            next(err)
+        })
+})
+
 
 module.exports = router;
 
