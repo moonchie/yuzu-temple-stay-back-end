@@ -6,19 +6,14 @@ const Schema = mongoose.Schema;
 const Temple = require('../models/temple-model');
 
 const bookingSchema = new Schema({
-    // from User model
-    userID: { type: String },
-    // from Temple model, will populate Name and picture
-    templeID: {
-        type: Schema.Types.ObjectId,
-        ref: "Temple",
-        required: true
-     },
-    // from booking form
-    nights: { type: Number },
-    date: { type: Date },
-    guests: { type: Number },
-    cost: { type: Number}
+
+    userId: { type: String },
+    templeName: String,
+    templePicture: String,
+    nights: { type: String },
+    date: { type: String },
+    guests: { type: String },
+    totalCost: { type: Number}
 })
 
 

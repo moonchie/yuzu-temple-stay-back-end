@@ -103,14 +103,16 @@ router.get("/needconfirm", (req, res, next) => {
 
 // POST save the booking to this user and then load Confirmation page
 // call the Booking Model
-router.post("/confirmed", (req, res, next) => {
+router.post("/booking-process", (req, res, next) => {
     // the data from the form
-    const { firstName, lastName, email, userID, templeID, nights, date, guests, cost } = req.body;
+    // console.log(req.body);
+    const {templeName, templePicture, nights, guests, totalCost, userId, date} = req.body.dataToBackend;
 
     // Create this record in the database
-    Booking.create({firstName, lastName, email, userID, templeID, nights, date, guests, cost })
+    Booking.create({ templeName, templePicture, nights, guests, totalCost, userId, date })
         .then((newRecord) => {
-            // do nothing
+            console.log(`${newRecord.templeName} is booked and confirmed !`);
+            res.json(newRecord)
         })
         .catch((err) => {
             next(err)
