@@ -2,11 +2,7 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-// import Temple model
-const Temple = require('../models/temple-model');
-
 const bookingSchema = new Schema({
-
     userId: { type: String },
     templeName: String,
     templePicture: String,

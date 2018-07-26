@@ -59,12 +59,9 @@ router.get("/temple/:id", (req, res, next) => {
 
 // User booking history
 router.get("/history", (req, res, next) => {
-    // How to check if user logged in or not??
+    const userId = req.user._id;
 
-    // Example User id
-    const { id } = "5b56f64a101e4b2bc0d1fb06";
-
-    Booking.findOne(id)
+    Booking.find({ userId })
         .then((booking) => {
             if (!booking) {
                 next();
