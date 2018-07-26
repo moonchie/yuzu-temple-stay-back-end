@@ -7,9 +7,6 @@ const Temple = require('../models/temple-model');
 
 const bookingSchema = new Schema({
     // from User model
-    firstName: { type: String, required: true},
-    lastName: { type: String, required: true},
-    email: { type: String},
     userID: { type: String },
     // from Temple model, will populate Name and picture
     templeID: {
@@ -18,9 +15,9 @@ const bookingSchema = new Schema({
         required: true
      },
     // from booking form
-    nights: { type: String },
-    date: { type: String },
-    guests: { type: String },
+    nights: { type: Number },
+    date: { type: Date },
+    guests: { type: Number },
     cost: { type: Number}
 })
 

@@ -16,14 +16,11 @@ mongoose
 
 const bookingData = [
     {
-        firstName: "Peachy",
-        lastName: "Green",
-        email: "peachy@green.com",
         userID: "5b56f64a101e4b2bc0d1fb06",
         templeID:"5b585732f6f8181b045c84f0",
-        nights: "2",
-        date: "December 17, 2018",
-        guests: "2",
+        nights: 2,
+        date: 2018-07-27,
+        guests: 2,
         cost: 180
     }
 ]
