@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 // Linking files
 const Temple = require("../models/temple-model.js");
 const mongoose = require("mongoose");
@@ -5,7 +7,7 @@ const mongoose = require("mongoose");
 
 mongoose.Promise = Promise;
 mongoose
-  .connect('mongodb://localhost/yuzu-back-end', {useMongoClient: true})
+  .connect(process.env.MONGODB_URI, {useMongoClient: true})
   .then(() => {
     console.log('Connected to Mongo of Yuzu-back-end!')
   }).catch(err => {
