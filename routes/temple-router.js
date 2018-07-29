@@ -5,7 +5,6 @@ const Temple = require('../models/temple-model');
 const Booking = require('../models/booking-model')
 
 
-
 router.get("/", (req, res, next) => {
     // August Suggestion temple
     const { id } = "5b585732f6f8181b045c84f2";
@@ -41,7 +40,7 @@ router.get("/temples",(req, res, next) => {
 router.get("/temple/:id", (req, res, next) => {
     // August Suggestion temple
     const id = req.params.id;
-    // res.send(id);
+    // res.send(req.params);
 
     Temple.findById(id)
         .then((temple) => {
@@ -55,6 +54,19 @@ router.get("/temple/:id", (req, res, next) => {
             next(err);
         });
 });
+
+
+// Show temple at Tokyo
+ router.get("/temple/tokyo", (req, res, next) => {
+    Temple
+        .find({city: "Tokyo"})
+        .then((temples) => {
+            res.json(temples);
+        })
+        .catch((err) => {
+            next(err);
+        })
+})
 
 
 // User booking history
@@ -119,13 +131,4 @@ router.post("/booking-process", (req, res, next) => {
 
 module.exports = router;
 
-
-// // My route sample
-// router.get("/temples",(req, res, next) => {
-//     Temple
-//     .find()
-//     .sort()
-//     .then()
-//     .catch()
-// })
 

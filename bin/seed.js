@@ -171,55 +171,67 @@ const templeData = [
     price:77,
     },
 
-  // // Temple 6
-  // {
-  //   nameENG: "",
-  //   nameJPG: "",
-  //   address: "",
-  //   geoLocation: [,],    /*lat,long*/
-  //   contact: "",
-  //   city: "",
-  //   picture: "",
-  //   description: "",
-  //   guests: "",
-  //   beds: "",
-  //   bath: "",
-  //   Amentities: [{
-  //       wifi: true,
-  //       essentials: true,
-  //       kitchen: false,
-  //       tv: false,
-  //       airconditioning: true,
-  //       heating: false,
-  //       smokeDetec: true
-  //   }],
-  //   price,
-  //   },
+  // Temple 6
+  {
+    nameENG: "Myokenji",
+    nameJPG: "妙顕寺",
+    address: "602-0005 Kyoto Prefecture, Kyoto, Kamigyo Ward, Myokenjimaecho",
+    geoLocation: [35.034265,135.754460],    /*lat,long*/
+    contact: "+81 75-414-0808",
+    city: "Kyoto",
+    picture: [
+      "http://ako-kankou.jp/en/wp-content/uploads/2017/07/si_myokenji01-1.jpg",
+      "https://res.cloudinary.com/dzblxtdk3/image/upload/v1532902069/Yuzu%20project/%E5%A6%99%E9%A1%95%E5%AF%BA/41253663511_143b856012_b.jpg",
+      "https://res.cloudinary.com/dzblxtdk3/image/upload/v1532902069/Yuzu%20project/%E5%A6%99%E9%A1%95%E5%AF%BA/41253663511_143b856012_b.jpg",
+      "https://res.cloudinary.com/dzblxtdk3/image/upload/v1532902069/Yuzu%20project/%E5%A6%99%E9%A1%95%E5%AF%BA/190_main_430.jpg",
+      "https://res.cloudinary.com/dzblxtdk3/image/upload/v1532902067/Yuzu%20project/%E5%A6%99%E9%A1%95%E5%AF%BA/190_g_284.jpg"],
+    description: "Myoukenji is a temple of an old school of Shingon-shu. It was founded by Gyouki Bosatsu between 749 - 757) and is said to have been restored by Kukai in 806, but the story is uncertain.TheKannon-douhad been constructed in 1659. The current hall is a reconstruction done in 1772.",
+    guests: "2",
+    beds: "1",
+    bath: "1",
+    Amentities: [{
+        wifi: true,
+        essentials: true,
+        kitchen: false,
+        tv: false,
+        airconditioning: true,
+        heating: false,
+        smokeDetec: true
+    }],
+    price: 47,
+    },
 
-  // // Temple 7
-  // {
-  //   nameENG: "",
-  //   nameJPG: "",
-  //   address: "",
-  //   geoLocation: [,],    /*lat,long*/
-  //   contact: "",
-  //   city: "",
-  //   picture: "",
-  //   description: "",
-  //   guests: "",
-  //   beds: "",
-  //   bath: "",
-  //   Amentities: [{
-  //       wifi: true,
-  //       essentials: true,
-  //       kitchen: false,
-  //       tv: false,
-  //       airconditioning: true,
-  //       heating: false,
-  //       smokeDetec: true
-  //   }],
-  //   price,
-  //   },
+  // Temple 7
+  {
+    nameENG: "Fukuchiin",
+    nameJPG: "福智院",
+    address: "657 Koyasan, Kōya, Ito District, Wakayama Prefecture 648-0211, Japan",
+    geoLocation: [34.212686,135.587461],    /*lat,long*/
+    contact: "+81 736-56-2021",
+    city: "Wakayama",
+    picture: [
+      "https://res.cloudinary.com/dzblxtdk3/image/upload/v1532902667/Yuzu%20project/%E7%A6%8F%E6%99%BA%E9%99%A2/shukubo_img001.jpg",
+      "https://res.cloudinary.com/dzblxtdk3/image/upload/v1532902671/Yuzu%20project/%E7%A6%8F%E6%99%BA%E9%99%A2/screenshot-www.fukuchiin.com-2018.07.30-00-15-24.png",
+      "https://res.cloudinary.com/dzblxtdk3/image/upload/v1532902664/Yuzu%20project/%E7%A6%8F%E6%99%BA%E9%99%A2/about_img001.jpg",
+      "https://res.cloudinary.com/dzblxtdk3/image/upload/v1532902660/Yuzu%20project/%E7%A6%8F%E6%99%BA%E9%99%A2/10183216.jpg",
+      "https://res.cloudinary.com/dzblxtdk3/image/upload/v1532902664/Yuzu%20project/%E7%A6%8F%E6%99%BA%E9%99%A2/onsen_img001.jpg"
+    ],
+    description: "Located in historic Koyasan, this ryokan offers a distinctly traditional experience. Its three gardens, designed by famous landscape artist Mirei Shigemori, and the cedar forests covering the area around this temple inn instill a sense of serenity. The natural hot springs of Koyasan are available only here and are open 24 hours a day. Vegetarian dishes featuring seasonal ingredients are served, and the meals are painstakingly planned and prepared by the head chef with a different course every month."
+    ,
+    guests: "4",
+    beds: "2",
+    bath: "1",
+    Amentities: [{
+        wifi: true,
+        essentials: true,
+        kitchen: false,
+        tv: true,
+        airconditioning: true,
+        heating: false,
+        smokeDetec: true
+    }],
+    price: 184,
+    },
 
   // // Temple 7
   // {
